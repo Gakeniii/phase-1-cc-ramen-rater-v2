@@ -27,6 +27,8 @@
   "dependencies": {
     "@testing-library/dom": "^9.3.4",
     "happy-dom": "^13.2.1",
+    "json": "^11.0.0",
+    "server": "^1.0.41",
     "vitest": "^1.2.1"
   }
 }
