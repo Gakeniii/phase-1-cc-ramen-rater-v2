@@ -14,8 +14,10 @@ const handleClick = (ramen) => {
     document.getElementById('comment-display').innerText = ramen.comment
 
     //prefill form
-    // document.getElementById('new-rating').value = ramen.rating;
-    // document.getElementById('new-comment').value = ramen.comment;
+    document.getElementById('new-rating').value = ramen.rating;
+    document.getElementById('new-comment').value = ramen.comment;
+
+    
 };
 
 //Display Ramens
@@ -62,6 +64,7 @@ function addRamen(ramen){
 }
 
 function submitEditRamen(){
+  
   editRamen.addEventListener('submit', event => {
     event.preventDefault();
     if(currentRamen) return;
@@ -72,6 +75,7 @@ function submitEditRamen(){
     handleClick(currentRamen)
   })
 }
+submitEditRamen()
 
 const main = () => {
   displayRamens()
@@ -80,38 +84,12 @@ const main = () => {
 
 main()
 
-document.addEventListener('DOMcontentLoaded', main);
 
-// Export functions for testing
-// export {
-//   displayRamens,
-//   addSubmitListener,
-//   handleClick,
-//   main,
-// };
+//Export functions for testing
+export {
+  displayRamens,
+  addSubmitListener,
+  handleClick,
+  main,
+};
 
-// //defining the ramens inside te db.json file
-// async function fetchData() {
-//   try {
-//     const response = await fetch('db.json'); // Replace with the correct path to your JSON file
-//     const data = await response.json();
-//     ramens = data.ramens; // Assuming the object is named "ramens" within the JSON
-//     // Now you can access ramens within your handleClick function
-//     handleClick();
-//   } catch (error) {
-//     console.error('Error fetching data:', error);
-//   }
-// }
-
-// fetchData()
-
-// function setInitialRamenDetail(){
-//   fetch('http://localhost:3000/ramens')
-//   .then(res => res.json()
-// .then(ramens => {
-//   if (ramens.length > 0) {
-//     handleClick(ramens[0]);
-//   }
-// }));
-// }
-// setInitialRamenDetail()
